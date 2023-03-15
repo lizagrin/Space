@@ -1,3 +1,13 @@
 /my_django_space/myvenv/
 /my_django_space/myvenv/lib/python3.10/
 /my_django_space/myvenv/lib64/
+/my_django_space/space/myspace/migrations/__init__.py
+/my_django_space/space/myspace/templates/myspace/__init__.py
+/my_django_space/space/myspace/templates/myspace/asgi.py
+/my_django_space/space/myspace/templates/myspace/settings.py
+/my_django_space/space/myspace/templates/myspace/urls.py
+/my_django_space/space/myspace/templates/myspace/wsgi.py
+/my_django_space/space/myspace/templates/__init__.py
+/my_django_space/space/myspace/__init__.py
+/my_django_space/space/space/__init__.py
+/my_django_space/space/__init__.py
