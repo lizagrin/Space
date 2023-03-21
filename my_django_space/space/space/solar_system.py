@@ -1,4 +1,5 @@
 import csv
+from typing import TypedDict
 
 
 class Planet:
@@ -15,22 +16,14 @@ class Planet:
         self.satellites = satellites
 
 
-mercury, venus, earth, mars, jupiter, saturn, uranus, neptune = Planet, Planet, Planet, Planet, Planet, Planet, Planet, Planet
+planets = {}
+names = []
 with open("information/planets.csv", encoding='utf-8') as r_planets:
     heading = next(r_planets)
     file_reader = csv.reader(r_planets, delimiter=',')
     count = 0
-
     for row in file_reader:
-        if count == 0:
-            mercury.name = row[0]
-            mercury.diameter = row[1]
-            mercury.mass = row[2]
-            mercury.inclination = row[3]
-            mercury.eccentricity = row[4]
-            mercury.gravity = row[5]
-            mercury.orbitalPeriod = row[6]
-            mercury.siderealRotation = row[6]
-            mercury.satellites = row[7]
+        names.append(row[0])
+        planets[names[count]] = Planet(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
         count += 1
-    print(mercury.name, mercury.diameter, mercury.mass, mercury.inclination, mercury.eccentricity, mercury.gravity, mercury.orbitalPeriod, mercury.siderealRotation, mercury.satellites)
+    print(planets['Mercury'].name, planets['Venus'].diameter)
