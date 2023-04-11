@@ -80,3 +80,6 @@ while dt <= 86400 * 365:
     Uranus.pos = rotate(Uranus.pos, angle=theta_uranus, axis=vector(0, 0, 1))
     Neptune.pos = rotate(Neptune.pos, angle=theta_neptune, axis=vector(0, 0, 1))
 dt += 10
+
+
+
