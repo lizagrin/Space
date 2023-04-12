@@ -1,8 +1,11 @@
 # solar_system_3d.py
+
 import itertools
 import math
+
 import matplotlib.pyplot as plt
 from vectors import Vector
+
 
 
 class SolarSystem:
@@ -17,19 +20,23 @@ class SolarSystem:
             figsize=(self.size / 50, self.size / 50),
         )
         self.fig.tight_layout()
+
         if self.projection_2d:
             self.ax.view_init(10, 0)
         else:
             self.ax.view_init(0, 0)
 
+
     def add_body(self, body):
         self.bodies.append(body)
+
 
     def update_all(self):
         self.bodies.sort(key=lambda item: item.position[0])
         for body in self.bodies:
             body.move()
             body.draw()
+
 
     def draw_all(self):
         self.ax.set_xlim((-self.size / 2, self.size / 2))
@@ -44,6 +51,7 @@ class SolarSystem:
         plt.pause(0.001)
         self.ax.clear()
 
+
     def calculate_all_body_interactions(self):
         bodies_copy = self.bodies.copy()
         for idx, first in enumerate(bodies_copy):
@@ -51,9 +59,13 @@ class SolarSystem:
                 first.accelerate_due_to_gravity(second)
 
 
+
+
 class SolarSystemBody:
     min_display_size = 10
     display_log_base = 1.3
+
+
 
     def __init__(
             self,
@@ -73,12 +85,14 @@ class SolarSystemBody:
         self.colour = "black"
         self.solar_system.add_body(self)
 
+
     def move(self):
         self.position = (
             self.position[0] + self.velocity[0],
             self.position[1] + self.velocity[1],
             self.position[2] + self.velocity[2],
         )
+
 
     def draw(self):
         self.solar_system.ax.plot(
@@ -87,6 +101,7 @@ class SolarSystemBody:
             markersize=self.display_size + self.position[0] / 30,
             color=self.colour
         )
+
         if self.solar_system.projection_2d:
             self.solar_system.ax.plot(
                 self.position[0],
@@ -96,6 +111,8 @@ class SolarSystemBody:
                 markersize=self.display_size / 2,
                 color=(.5, .5, .5),
             )
+
+
 
     def accelerate_due_to_gravity(self, other):
         distance = Vector(*other.position) - Vector(*self.position)
@@ -107,6 +124,8 @@ class SolarSystemBody:
             acceleration = force / body.mass
             body.velocity += acceleration * reverse
             reverse = -1
+
+
 
 
 class Sun(SolarSystemBody):
@@ -121,8 +140,11 @@ class Sun(SolarSystemBody):
         self.colour = "yellow"
 
 
+
+
 class Planet(SolarSystemBody):
     colours = itertools.cycle([(1, 0, 0), (0, 1, 0), (0, 0, 1)])
+
 
     def __init__(
             self,
@@ -133,3 +155,4 @@ class Planet(SolarSystemBody):
     ):
         super(Planet, self).__init__(solar_system, mass, position, velocity)
         self.colour = next(Planet.colours)
+

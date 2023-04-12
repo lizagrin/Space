@@ -1,7 +1,9 @@
 from vpython import sphere, vector, color, rotate
 import math
 
+
 G = 6.667e-11  # гравитационная постоянная, м^3 кг^-1 с^-2
+
 
 #Массы планет, кг
 sun_weight = 1.9885e30
@@ -15,6 +17,7 @@ jupiter_weight = 1.90e27
 uranus_weight = 8.68e25
 neptune_weight = 1.02e26
 
+
 #Средние расстояния от Солнца до планет, м
 sun_earth_dist = 1.496e11
 sun_mars_dist = 2.489e11
@@ -24,6 +27,7 @@ sun_saturn_dist = 1.466e12
 sun_jupiter_dist = 7.409e11
 sun_uranus_dist = 2.939e12
 sun_neptune_dist = 4.473e12
+
 
 # Гравитационные силы между планетами и солнцем, Н
 sun_earth_F = G * sun_weight * earth_weight / (sun_earth_dist * sun_earth_dist)
@@ -35,6 +39,7 @@ sun_jupiter_F = G * sun_weight * jupiter_weight / (sun_jupiter_dist * sun_jupite
 sun_uranus_F = G * sun_weight * uranus_weight / (sun_uranus_dist * sun_uranus_dist)
 sun_neptune_F = G * sun_weight * neptune_weight / (sun_neptune_dist * sun_neptune_dist)
 
+
 # Угловые скорости
 earth_w = math.sqrt(sun_earth_F / (earth_weight * sun_earth_dist))
 mars_w = math.sqrt(sun_mars_F / (mars_weight * sun_mars_dist))
@@ -44,6 +49,7 @@ saturn_w = math.sqrt(sun_saturn_F / (saturn_weight * sun_saturn_dist))
 jupiter_w = math.sqrt(sun_jupiter_F / (jupiter_weight * sun_jupiter_dist))
 uranus_w = math.sqrt(sun_uranus_F / (uranus_weight * sun_uranus_dist))
 neptune_w = math.sqrt(sun_neptune_F / (neptune_weight * sun_neptune_dist))
+
 
 v = vector(0.5, 0, 0)
 Earth = sphere(pos=vector(9, 0, 0), color=color.green, radius=0.6, make_trail=True)
@@ -56,9 +62,11 @@ Jupiter = sphere(pos=vector(20, 0, 0), color=color.cyan, radius=1.7, make_trail=
 Uranus = sphere(pos=vector(66, 0, 0), color=color.purple, radius=1, make_trail=True)
 Neptune = sphere(pos=vector(100, 0, 0), color=color.magenta, radius=1, make_trail=True)
 
+
 # Будем использовать полярные координаты
 # Шаг
 dt = 10
+
 
 # углы поворота за один шаг:
 theta_earth = earth_w * dt
@@ -69,6 +77,8 @@ theta_saturn = saturn_w * dt
 theta_jupiter = jupiter_w * dt
 theta_uranus = uranus_w * dt
 theta_neptune = neptune_w * dt
+
+
 while dt <= 86400 * 365:
     #Поворот вокруг оси z (0,0,1)
     Earth.pos = rotate(Earth.pos, angle=theta_earth, axis=vector(0, 0, 1))

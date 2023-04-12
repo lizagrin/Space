@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
-    <!--    TITLE  -->
-
     <title>Космический симулятор</title>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
@@ -12,19 +9,12 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-
-<!--    НАВИГАЦИЯ -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
-
-    <!--    TITLE  -->
-
     <title>Космический симулятор</title>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
@@ -32,46 +22,23 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="https://www.webglearth.com/v2/api.js"></script>
     <script>
       function initialize() {
         var earth = new WE.map('earth_div');
         earth.setView([46.8011, 8.2266], 2);
         WE.tileLayer('https://webglearth.github.io/webglearth2-offline/{z}/{x}/{y}.jpg', {
-          tileSize: 256,
-          bounds: [[-85, -180], [85, 180]],
-          minZoom: 0,
-          maxZoom: 16,
-          attribution: 'WebGLEarth example',
-          tms: true
-        }).addTo(earth);
-      }
+          tileSize: 256,bounds: [[-85, -180], [85, 180]],minZoom: 0,maxZoom: 16,attribution: 'WebGLEarth example',tms: true}).addTo(earth);}
     </script>
     <style type="text/css">
       html, body{padding: 0; margin: 0;}
       #earth_div{top: 0; right: 0; bottom: 0; left: 0;
                  position: absolute !important;
                  background-image: -webkit-gradient(
-                   linear,
-                   left bottom,
-                   left top,
-                   color-stop(0, rgb(253,253,253)),
-                   color-stop(0.15, rgb(253,253,253)),
-                   color-stop(0.53, rgb(223,223,223)),
-                   color-stop(0.56, rgb(255,255,255)),
-                   color-stop(1, rgb(253,253,253))
-                   );
-                 background-image: -moz-linear-gradient(
-                   center bottom,
-                   rgb(253,253,253) 0%,
-                   rgb(253,253,253) 15%,
-                   rgb(223,223,223) 53%,
-                   rgb(255,255,255) 56%,
-                   rgb(253,253,253) 100%
-                   );
-      }
-    </style>
+                   linear,left bottom,left top,color-stop(0, rgb(253,253,253)),color-stop(0.15, rgb(253,253,253)),
+                   color-stop(0.53, rgb(223,223,223)),color-stop(0.56, rgb(255,255,255)),color-stop(1, rgb(253,253,253)));
+                 background-image: -moz-linear-gradient(center bottom,rgb(253,253,253) 0%,rgb(253,253,253) 15%,
+                   rgb(223,223,223) 53%,rgb(255,255,255) 56%,rgb(253,253,253) 100%);}</style>
     <title>WebGL Earth API: custom maps tiles on a 3D globe</title>
     <meta name="description"
           content="This example shows a custom map rendered by MapTiler Desktop on a 3D globe. This 3D digital globe for web and mobile devices is completely free and open-source.">
@@ -82,9 +49,7 @@
         <img src="../pics/logo.png"
              width="40" height="40" alt="">
     </a>
-    <a href="#" class="navbar-brand">
-        Space simulator
-    </a>
+    <a href="#" class="navbar-brand">Space simulator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,40 +57,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="../site.html" class="nav-link">Главная</a>
-            </li>
-            <li class="nav-item">
-                <a href="../main_page/solar_system.html" class="nav-link">Солнечная система</a>
-            </li>
-            <li class="nav-item">
-                <a href="../main_page/planets.html" class="nav-link">Планеты</a>
-            </li>
-            <li class="nav-item">
-                <a href="../main_page/stars.html" class="nav-link">Звезды</a>
-            </li>
-            <li class="nav-item">
-                <a href="../main_page/about_project.html" class="nav-link">О проекте</a>
-            </li>
+            <li class="nav-item"><a href="../site.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="../main_page/solar_system.html" class="nav-link">Солнечная система</a></li>
+            <li class="nav-item"><a href="../main_page/planets.html" class="nav-link">Планеты</a></li>
+            <li class="nav-item"><a href="../main_page/stars.html" class="nav-link">Звезды</a></li>
+            <li class="nav-item"><a href="../main_page/about_project.html" class="nav-link">О проекте</a></li>
         </ul>
     </div>
 </nav>
 <div id="earth_div"></div>
-</body>
-</html>
-
-<!--    СЛАЙДЕР  -->
-
-<!--    ОСНОВНОЙ БЛОК КОНТЕНТА -->
-
-<!--    ПОДВАЛ  -->
-
+</body></html>
 <footer class="footer">
     <div class="container">
-        <p class="float-right">
-            <a href="#">Наверх</a>
-        </p>
-    </div>
+        <p class="float-right"><a href="#">Наверх</a></p></div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -134,5 +78,4 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
-</body>
-</html>
+</body></html>
